@@ -31,14 +31,6 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
-          
-      - name: Deploy with Wrangler
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          wranglerVersion: "4.65.0"
-          command: d1 migrations apply moemail --remote
-
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
